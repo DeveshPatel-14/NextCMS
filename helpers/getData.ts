@@ -6,7 +6,7 @@ type Response = {
 
 const getHygraphData = async (query: string) => {
   try {
-    const hygraph = new GraphQLClient(process.env.HYGRAPH_URI);
+    const hygraph = new GraphQLClient(process.env.HYGRAPH_URI!);
     const res: Response = await hygraph.request(query);
     return res;
 
